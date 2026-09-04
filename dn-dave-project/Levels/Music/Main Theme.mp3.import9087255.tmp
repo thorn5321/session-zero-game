@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcgkft2cfaptg"
+path="res://.godot/imported/Main Theme.mp3-a6493f1622ba1b039f63761292382dc1.mp3str"
+
+[deps]
+
+source_file="res://Levels/Music/Main Theme.mp3"
+dest_files=["res://.godot/imported/Main Theme.mp3-a6493f1622ba1b039f63761292382dc1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

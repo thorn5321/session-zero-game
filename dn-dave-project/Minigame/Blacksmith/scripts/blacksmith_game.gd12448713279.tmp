@@ -1,0 +1,21 @@
+extends Control
+var hits = 0 
+var amount_per_click = 1
+
+signal hits_changed
+signal hits_clicked
+
+
+func _ready() -> void:
+	get_tree().paused = true
+	PlayerManager.player.visible = false
+	##PlayerHud.visible = false
+	PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED
+	## 3 - 13 - 20256 9 AM, I was putting these 4 lines above to test to see if it would work, since the player gets disabled.
+	## I also added a Canvas layer this basically allows it to be readable for buttons n stuff
+	pass # Replace with function body.
+
+func _on_click_button_button_down() -> void:
+	hits += amount_per_click
+	emit_signal("hits_changed", hits)
+	emit_signal("hits_clicked", amount_per_click)

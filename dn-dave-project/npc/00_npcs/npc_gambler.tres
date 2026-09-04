@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://blddc1rkggajd"]
+
+[ext_resource type="Texture2D" uid="uid://e1t2ttacc0lo" path="res://npc/sprites/portraits/gambler(1).png" id="1_2bf6s"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="2_1rnrt"]
+[ext_resource type="Texture2D" uid="uid://b3pm8xqtakiqf" path="res://npc/sprites_final/Final Update/Gambler-Sprites-Update.png" id="3_1rnrt"]
+
+[resource]
+script = ExtResource("2_1rnrt")
+npc_name = "Chester"
+sprite = ExtResource("3_1rnrt")
+portrait = ExtResource("1_2bf6s")
+dialog_audio_pitch = 0.72
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

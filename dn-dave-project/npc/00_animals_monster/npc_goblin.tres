@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://beqkb8awtjp7b"]
+
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="1_8psp4"]
+[ext_resource type="Texture2D" uid="uid://blcmkbvb3a6d2" path="res://npc/sprites_final/animals/monsters/Goblin.png" id="2_8psp4"]
+
+[resource]
+script = ExtResource("1_8psp4")
+npc_name = "Goblin"
+sprite = ExtResource("2_8psp4")
+dialog_audio_pitch = 1.8
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

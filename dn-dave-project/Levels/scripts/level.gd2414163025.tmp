@@ -1,0 +1,30 @@
+class_name Level extends Node2D
+
+@export var music : AudioStream
+@onready var player_spawn: Node2D = get_node_or_null("PlayerSpawn")
+
+
+func _ready() -> void:
+	y_sort_enabled = true
+	
+	PlayerManager.set_as_parent(self)  # <-- player gets moved into this level
+	
+	await get_tree().process_frame     # <-- wait 1 frame so everything settles
+	
+	if LevelManager.target_transition == "" and player_spawn:
+		PlayerManager.set_player_position(player_spawn.global_position + LevelManager.position_offset)
+	
+	LevelManager.level_load_started.connect(_free_level)
+	AudioManager.play_music(music)
+	DiceManager.set_scene_nodes($CanvasLayer/Dice, $CanvasLayer/Dice/Label)
+	
+	print("Dice set in PlayGround scene")
+
+
+func _free_level() -> void:
+	PlayerManager.unparent_player(self)
+	queue_free()
+
+
+func _process(delta: float) -> void:
+	pass

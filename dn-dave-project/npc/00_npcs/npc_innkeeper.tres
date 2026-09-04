@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://ccdcl0ojd74de"]
+
+[ext_resource type="Texture2D" uid="uid://dppbaov1nmc1k" path="res://npc/sprites/portraits/Innkeeper.png" id="1_mad6w"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="2_1p3oo"]
+[ext_resource type="Texture2D" uid="uid://bh0hn77vkry3v" path="res://npc/sprites_final/Final Update/Innkeeper-Sprites-Update.png" id="3_mad6w"]
+
+[resource]
+script = ExtResource("2_1p3oo")
+npc_name = "Beni"
+sprite = ExtResource("3_mad6w")
+portrait = ExtResource("1_mad6w")
+dialog_audio_pitch = 1.6
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

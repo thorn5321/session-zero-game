@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgybspbebdn8k"
+path="res://.godot/imported/Sharkbite's Shanty.mp3-164634e74800595ea36b2dc328a09ee8.mp3str"
+
+[deps]
+
+source_file="res://Levels/Music/Sharkbite's Shanty.mp3"
+dest_files=["res://.godot/imported/Sharkbite's Shanty.mp3-164634e74800595ea36b2dc328a09ee8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

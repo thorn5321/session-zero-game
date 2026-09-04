@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cfd6ceft4ymq7"]
+
+[ext_resource type="PackedScene" uid="uid://c6vrsvacrp7qa" path="res://Tile Maps/grass-01.tscn" id="2_d17em"]
+[ext_resource type="PackedScene" uid="uid://bu2owhwnrslpd" path="res://npc/npc.tscn" id="3_1cwr0"]
+[ext_resource type="PackedScene" uid="uid://dueeitqmk1qy2" path="res://npc/npc_behavior_wander.tscn" id="4_46faf"]
+[ext_resource type="PackedScene" uid="uid://kb06r2wajyig" path="res://npc/npc_behavior_patrol.tscn" id="5_s2wwn"]
+[ext_resource type="PackedScene" uid="uid://ylix8shbx1i4" path="res://npc/patrol_location.tscn" id="6_bia53"]
+[ext_resource type="PackedScene" uid="uid://bf8m3fgyq0aiw" path="res://Interactibles/dialog/dialog_interaction.tscn" id="6_ta15a"]
+[ext_resource type="Script" uid="uid://bbccl13o27g0t" path="res://Interactibles/dialog/scripts/dialog_text.gd" id="7_ta15a"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="8_3px5j"]
+
+[sub_resource type="Resource" id="Resource_3321n"]
+script = ExtResource("8_3px5j")
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"
+
+[node name="Node2D (PlayGround)" type="Node2D" unique_id=584001019]
+
+[node name="Grass01" parent="." unique_id=406019472 instance=ExtResource("2_d17em")]
+
+[node name="NPC_Dwarf_Patrol" parent="." unique_id=289794545 instance=ExtResource("3_1cwr0")]
+position = Vector2(168.99998, 22)
+scale = Vector2(0.8, 0.8)
+collision_layer = 0
+
+[node name="NpcBehaviorPatrol" parent="NPC_Dwarf_Patrol" unique_id=2059669348 instance=ExtResource("5_s2wwn")]
+
+[node name="PatrolLocation" parent="NPC_Dwarf_Patrol/NpcBehaviorPatrol" unique_id=2081148079 instance=ExtResource("6_bia53")]
+modulate = Color(1, 0, 0, 1)
+
+[node name="PatrolLocation2" parent="NPC_Dwarf_Patrol/NpcBehaviorPatrol" unique_id=537330008 instance=ExtResource("6_bia53")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(81.250015, 0)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="PatrolLocation3" parent="NPC_Dwarf_Patrol/NpcBehaviorPatrol" unique_id=1047349997 instance=ExtResource("6_bia53")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(47.500015, -68.74999)
+
+[node name="DialogInteraction" parent="NPC_Dwarf_Patrol" unique_id=630171653 instance=ExtResource("6_ta15a")]
+enabled = true
+
+[node name="DialogText" type="Node" parent="NPC_Dwarf_Patrol/DialogInteraction" unique_id=1140496402]
+script = ExtResource("7_ta15a")
+text = "[b] Why are you so tall? [/b]"
+metadata/_custom_type_script = "uid://bbccl13o27g0t"
+
+[node name="DialogText2" type="Node" parent="NPC_Dwarf_Patrol/DialogInteraction" unique_id=2043831259]
+script = ExtResource("7_ta15a")
+text = "
+[wave] Um, Im not really that tall... [/wave]"
+npc_info = SubResource("Resource_3321n")
+metadata/_custom_type_script = "uid://bbccl13o27g0t"
+
+[node name="DialogText3" type="Node" parent="NPC_Dwarf_Patrol/DialogInteraction" unique_id=2057172205]
+script = ExtResource("7_ta15a")
+text = "Well from down here you sure are!"
+metadata/_custom_type_script = "uid://bbccl13o27g0t"
+
+[node name="NPC_Dwarf_Wander" parent="." unique_id=245411414 instance=ExtResource("3_1cwr0")]
+visible = false
+position = Vector2(4.5746256e-07, 9.67327)
+scale = Vector2(0.8, 0.8)
+
+[node name="NpcBehaviorWander" parent="NPC_Dwarf_Wander" unique_id=2130607038 instance=ExtResource("4_46faf")]

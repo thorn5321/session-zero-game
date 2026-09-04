@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://rqx4swfwvnvn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uchyk"]
+
+[node name="Control" type="Control" unique_id=1939147692]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RollButton" type="Button" parent="." unique_id=911764472]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 104.0
+offset_right = 336.0
+offset_bottom = 168.0
+text = "Roll
+"
+
+[node name="Dice" type="AnimatedSprite2D" parent="." unique_id=1725949623]
+sprite_frames = SubResource("SpriteFrames_uchyk")
+
+[node name="Label" type="Label" parent="Dice" unique_id=166918950]
+offset_left = 176.0
+offset_top = 152.0
+offset_right = 336.0
+offset_bottom = 216.0
+text = "Test"
+
+[connection signal="pressed" from="RollButton" to="." method="_on_roll_button_pressed"]

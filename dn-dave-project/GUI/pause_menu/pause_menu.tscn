@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://bf1fns1a4872w"]
+
+[ext_resource type="Script" uid="uid://gtys3knuoiqg" path="res://GUI/pause_menu/pause_menu.gd" id="1_4w82k"]
+
+[sub_resource type="Animation" id="Animation_4w82k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[ paused ] "]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.96024394, 0.96024394, 0.96024394, 0.6313726)]
+}
+
+[sub_resource type="Animation" id="Animation_yiq8o"]
+resource_name = "breathe"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[ paused ] "]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.96024394, 0.96024394, 0.96024394, 0.6313726), Color(0.9607843, 0.9607843, 0.9607843, 0), Color(0.9607843, 0.9607843, 0.9607843, 0.6313726)]
+}
+
+[sub_resource type="Animation" id="Animation_rsqrg"]
+resource_name = "default"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_36pfd"]
+_data = {
+&"RESET": SubResource("Animation_4w82k"),
+&"breathe": SubResource("Animation_yiq8o"),
+&"default": SubResource("Animation_rsqrg")
+}
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=2051909933]
+process_mode = 3
+script = ExtResource("1_4w82k")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1921901336]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17254902, 0.17254902, 0.17254902, 0.7647059)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1481605601]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -36.0
+offset_right = 60.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_Save" type="Button" parent="VBoxContainer" unique_id=600639367]
+layout_mode = 2
+text = "Save"
+
+[node name="Button_Load" type="Button" parent="VBoxContainer" unique_id=783559804]
+layout_mode = 2
+text = "Load"
+
+[node name="Button_Quit" type="Button" parent="VBoxContainer" unique_id=1539574314]
+layout_mode = 2
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=2142932448]
+modulate = Color(0.96024394, 0.96024394, 0.96024394, 0.6313726)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -58.0
+offset_right = 38.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[ paused ] "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=83714474]
+libraries/ = SubResource("AnimationLibrary_36pfd")
+autoplay = &"breathe"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://bve1i4vpe3txs"]
+
+[ext_resource type="Texture2D" uid="uid://d3j76juum280o" path="res://npc/sprites/portraits/AasimarFighter.png" id="1_44g6k"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="2_k0mdt"]
+[ext_resource type="Texture2D" uid="uid://b6tuy0hraqkda" path="res://npc/sprites_final/Final Update/Fighter-Sprites-Update.png" id="3_44g6k"]
+
+[resource]
+script = ExtResource("2_k0mdt")
+npc_name = "Ras"
+sprite = ExtResource("3_44g6k")
+portrait = ExtResource("1_44g6k")
+dialog_audio_pitch = 1.1
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

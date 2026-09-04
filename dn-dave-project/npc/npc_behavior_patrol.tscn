@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://kb06r2wajyig"]
+
+[ext_resource type="Script" uid="uid://ddmi0igh30iut" path="res://npc/scripts/npc_behavior_patrol.gd" id="1_pbuvt"]
+
+[node name="NpcBehaviorPatrol" type="Node2D" unique_id=2059669348]
+script = ExtResource("1_pbuvt")
+
+[node name="Timer" type="Timer" parent="." unique_id=324195092]
+one_shot = true

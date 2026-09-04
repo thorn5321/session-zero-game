@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://dltxkoeranxrn"]
+
+[ext_resource type="Texture2D" uid="uid://c8y0s638y8hm6" path="res://npc/sprites/portraits/Blacksmith.png" id="1_nulte"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="2_rb21r"]
+[ext_resource type="Texture2D" uid="uid://cbriq2gr8qgxa" path="res://npc/sprites_final/Final Update/Blacksmith-Sprites-Update.png" id="3_nulte"]
+
+[resource]
+script = ExtResource("2_rb21r")
+npc_name = "Cyra"
+sprite = ExtResource("3_nulte")
+portrait = ExtResource("1_nulte")
+dialog_audio_pitch = 0.9
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

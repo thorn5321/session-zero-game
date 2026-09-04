@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3o7plxt8nc4o"
+path="res://.godot/imported/Froggy_Swamp .mp3-914e9c77b5ea31225ea0e1f0ea0bbd67.mp3str"
+
+[deps]
+
+source_file="res://Levels/Music/Froggy_Swamp .mp3"
+dest_files=["res://.godot/imported/Froggy_Swamp .mp3-914e9c77b5ea31225ea0e1f0ea0bbd67.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

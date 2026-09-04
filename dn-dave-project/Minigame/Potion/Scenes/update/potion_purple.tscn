@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bcgqotlv7clhk"]
+
+[ext_resource type="Script" uid="uid://bj8efs21x1wad" path="res://Minigame/Potion/Scripts/update/draggable_potion.gd" id="1_2rmeo"]
+[ext_resource type="Texture2D" uid="uid://dl50p3v1yp6g6" path="res://Minigame/Potion/Assets/Potion small.PNG" id="1_7j8jl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptpsj"]
+
+[node name="PotionPurple" type="Area2D" unique_id=719040328]
+script = ExtResource("1_2rmeo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=922078875]
+scale = Vector2(0.009456284, 0.009456284)
+texture = ExtResource("1_7j8jl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=431388584]
+shape = SubResource("RectangleShape2D_ptpsj")

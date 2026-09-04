@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://bgx001hjwaq55"]
+
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="1_y67y0"]
+[ext_resource type="Texture2D" uid="uid://k6k0fk42xlfa" path="res://npc/sprites_final/animals/cow-gator-pig/pig.png" id="2_frurd"]
+
+[resource]
+script = ExtResource("1_y67y0")
+npc_name = "Pig"
+sprite = ExtResource("2_frurd")
+dialog_audio_pitch = 1.12
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

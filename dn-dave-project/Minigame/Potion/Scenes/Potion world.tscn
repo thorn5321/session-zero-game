@@ -1,0 +1,256 @@
+[gd_scene format=3 uid="uid://8w8cxpdv45mu"]
+
+[ext_resource type="Script" uid="uid://856a3x3mcwrc" path="res://Minigame/Potion/Scripts/potion_game.gd" id="1_ars0u"]
+[ext_resource type="Texture2D" uid="uid://ccb71ebcb5ysk" path="res://Minigame/Potion/Assets/Potion_BG.png" id="1_uk8sa"]
+[ext_resource type="PackedScene" uid="uid://btpv6cjbu48im" path="res://Minigame/Potion/Scenes/update/potion_blue.tscn" id="3_jp11l"]
+[ext_resource type="PackedScene" uid="uid://bsxttg0o6jhli" path="res://Minigame/Potion/Scenes/update/potion_green.tscn" id="4_cxict"]
+[ext_resource type="AudioStream" uid="uid://kngxbpqugkkk" path="res://title_scene/audio/Cursor1.ogg" id="5_cadvf"]
+[ext_resource type="PackedScene" uid="uid://bcgqotlv7clhk" path="res://Minigame/Potion/Scenes/update/potion_purple.tscn" id="5_fpxu0"]
+[ext_resource type="PackedScene" uid="uid://betro0rruqa8l" path="res://Levels/Transition_Test/level_transition_1.tscn" id="5_qyige"]
+[ext_resource type="Script" uid="uid://cli0dqmoq5i4s" path="res://Minigame/Blacksmith/scripts/fade_transition.gd" id="6_7cg5a"]
+[ext_resource type="AudioStream" uid="uid://yryixog2hnc0" path="res://title_scene/audio/Item1.mp3" id="6_cxict"]
+[ext_resource type="PackedScene" uid="uid://6s7n43qdk5jd" path="res://Minigame/Potion/Scenes/update/top_shelf_zone.tscn" id="6_fpxu0"]
+[ext_resource type="PackedScene" uid="uid://37c2rsvxtnpc" path="res://Levels/player_spawn.tscn" id="7_fpxu0"]
+[ext_resource type="PackedScene" uid="uid://cttf34uojn1yg" path="res://Minigame/Potion/Scenes/update/mid_shelf_zone.tscn" id="7_xn0od"]
+[ext_resource type="PackedScene" uid="uid://b2rf8l7bagqkl" path="res://Minigame/Potion/Scenes/update/bot_shelf_zone.tscn" id="8_l21wd"]
+
+[sub_resource type="Animation" id="Animation_ju5is"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g0eyb"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iv0u0"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_18lb8"]
+resource_name = "fade_out"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jp11l"]
+_data = {
+&"RESET": SubResource("Animation_ju5is"),
+&"default": SubResource("Animation_g0eyb"),
+&"fade_in": SubResource("Animation_iv0u0"),
+&"fade_out": SubResource("Animation_18lb8")
+}
+
+[node name="PotionWorld" type="Control" unique_id=1539947681]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_ars0u")
+next_scene_path = "uid://bwrmjadn80om3"
+target_transition_area = "PotionReturn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=452946124]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2107672766]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.20780024, 0.15469673, 0.27274877, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=631786532]
+offset_right = 1920.0
+offset_bottom = 1334.0
+scale = Vector2(0.203, 0.203)
+mouse_filter = 2
+texture = ExtResource("1_uk8sa")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer" unique_id=1134667840]
+offset_left = 389.0
+offset_right = 2309.0
+offset_bottom = 1334.0
+scale = Vector2(0.203, 0.203)
+mouse_filter = 2
+texture = ExtResource("1_uk8sa")
+flip_h = true
+
+[node name="CompleteLabel" type="Label" parent="CanvasLayer" unique_id=753369956]
+visible = false
+offset_left = 114.0
+offset_top = 4.0
+offset_right = 268.0
+offset_bottom = 49.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 39
+text = "Complete!"
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=261269309]
+offset_left = 351.0
+offset_top = 2.0
+offset_right = 505.0
+offset_bottom = 47.0
+scale = Vector2(0.576984, 0.576984)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 39
+
+[node name="Minigame_Objects" type="Node2D" parent="CanvasLayer" unique_id=212441786]
+
+[node name="PotionBlue" parent="CanvasLayer/Minigame_Objects" unique_id=1630562527 instance=ExtResource("3_jp11l")]
+position = Vector2(393, 140)
+scale = Vector2(4.393937, 4.393937)
+
+[node name="PotionPurple" parent="CanvasLayer/Minigame_Objects" unique_id=1441941793 instance=ExtResource("5_fpxu0")]
+position = Vector2(395, 228)
+scale = Vector2(2.2745059, 2.2745059)
+
+[node name="PotionGreen" parent="CanvasLayer/Minigame_Objects" unique_id=368436255 instance=ExtResource("4_cxict")]
+position = Vector2(394, 41)
+scale = Vector2(2.7502518, 2.7502518)
+
+[node name="Shelf_Zone" type="Node2D" parent="CanvasLayer" unique_id=1447999649]
+visible = false
+
+[node name="TopShelfZone" parent="CanvasLayer/Shelf_Zone" unique_id=1586911064 instance=ExtResource("6_fpxu0")]
+position = Vector2(103, 41)
+scale = Vector2(2.728025, 2.728025)
+
+[node name="TopShelfZone2" parent="CanvasLayer/Shelf_Zone" unique_id=629533972 instance=ExtResource("6_fpxu0")]
+position = Vector2(165, 41)
+scale = Vector2(2.728025, 2.728025)
+
+[node name="TopShelfZone3" parent="CanvasLayer/Shelf_Zone" unique_id=256776615 instance=ExtResource("6_fpxu0")]
+position = Vector2(226, 41)
+scale = Vector2(2.728025, 2.728025)
+
+[node name="TopShelfZone4" parent="CanvasLayer/Shelf_Zone" unique_id=1681096676 instance=ExtResource("6_fpxu0")]
+position = Vector2(288, 41)
+scale = Vector2(2.728025, 2.728025)
+
+[node name="MidShelfZone" parent="CanvasLayer/Shelf_Zone" unique_id=1136034220 instance=ExtResource("7_xn0od")]
+position = Vector2(139.00002, 140)
+scale = Vector2(4.371111, 4.371111)
+
+[node name="MidShelfZone2" parent="CanvasLayer/Shelf_Zone" unique_id=981977196 instance=ExtResource("7_xn0od")]
+position = Vector2(252.00002, 140)
+scale = Vector2(4.371111, 4.371111)
+
+[node name="BotShelfZone" parent="CanvasLayer/Shelf_Zone" unique_id=826674172 instance=ExtResource("8_l21wd")]
+position = Vector2(95, 228)
+scale = Vector2(2.271844, 2.271844)
+
+[node name="BotShelfZone2" parent="CanvasLayer/Shelf_Zone" unique_id=1039348737 instance=ExtResource("8_l21wd")]
+position = Vector2(145, 228)
+scale = Vector2(2.271844, 2.271844)
+
+[node name="BotShelfZone3" parent="CanvasLayer/Shelf_Zone" unique_id=1586012359 instance=ExtResource("8_l21wd")]
+position = Vector2(195.00002, 228)
+scale = Vector2(2.271844, 2.271844)
+
+[node name="BotShelfZone4" parent="CanvasLayer/Shelf_Zone" unique_id=1379394457 instance=ExtResource("8_l21wd")]
+position = Vector2(245.00002, 228)
+scale = Vector2(2.271844, 2.271844)
+
+[node name="BotShelfZone5" parent="CanvasLayer/Shelf_Zone" unique_id=365622258 instance=ExtResource("8_l21wd")]
+position = Vector2(296, 228)
+scale = Vector2(2.271844, 2.271844)
+
+[node name="SuccessAudio" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=41597524]
+stream = ExtResource("5_cadvf")
+volume_db = 2.0
+
+[node name="PotionAudio" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1113591509]
+stream = ExtResource("6_cxict")
+volume_db = 2.0
+
+[node name="PlayerSpawn" parent="." unique_id=497884489 instance=ExtResource("7_fpxu0")]
+position = Vector2(-23, 72)
+scale = Vector2(0.2, 0.2)
+
+[node name="LevelTransition" parent="." unique_id=1311868414 instance=ExtResource("5_qyige")]
+position = Vector2(235, 416)
+level = "uid://bcadkbgm0js21"
+size = 1
+side = 2
+
+[node name="LevelTransitionPOT" parent="." unique_id=1402125372 instance=ExtResource("5_qyige")]
+position = Vector2(347, 416)
+level = "uid://bcadkbgm0js21"
+target_transition_area = "LevelTransitionPOT"
+size = 1
+side = 2
+
+[node name="FadeTransition" type="CanvasLayer" parent="." unique_id=1111323574]
+process_mode = 3
+script = ExtResource("6_7cg5a")
+
+[node name="Control" type="Control" parent="FadeTransition" unique_id=688195089]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="FadeTransition/Control" unique_id=1341850389]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeTransition/Control" unique_id=1709097420]
+libraries/ = SubResource("AnimationLibrary_jp11l")
+autoplay = &"default"

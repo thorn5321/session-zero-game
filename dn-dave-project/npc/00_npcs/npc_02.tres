@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://1phaaoqkna2s"]
+
+[ext_resource type="Texture2D" uid="uid://bh4wie4d576n" path="res://npc/sprites/portraits/npc_portrait_01.png" id="1_3liqj"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="2_7c467"]
+[ext_resource type="Texture2D" uid="uid://dctnypasrmisa" path="res://npc/sprites/npc_sprite.png" id="3_vhau3"]
+
+[resource]
+script = ExtResource("2_7c467")
+npc_name = "Test_NPC"
+sprite = ExtResource("3_vhau3")
+portrait = ExtResource("1_3liqj")
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

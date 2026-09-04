@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://boqnwqvxa4rbu"]
+
+[ext_resource type="Script" uid="uid://cplr8ke2mlhum" path="res://Minigame/Farming/scripts/update/draggable_plant.gd" id="1_66fde"]
+[ext_resource type="Texture2D" uid="uid://d0g1h8ceoaafy" path="res://Minigame/Farming/assets/cabbage.png" id="2_i0mer"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptpsj"]
+
+[node name="ObjectCabbage" type="Area2D" unique_id=719040328]
+script = ExtResource("1_66fde")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=922078875]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("2_i0mer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=431388584]
+shape = SubResource("RectangleShape2D_ptpsj")

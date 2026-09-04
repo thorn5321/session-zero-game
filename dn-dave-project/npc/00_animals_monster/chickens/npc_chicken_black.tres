@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://v1saq40nq55s"]
+
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="1_r8wpu"]
+[ext_resource type="Texture2D" uid="uid://bns2811dfnid8" path="res://npc/sprites_final/animals/chickens-squirrel/chicken-black.png" id="2_r8wpu"]
+
+[resource]
+script = ExtResource("1_r8wpu")
+npc_name = "Chicken"
+sprite = ExtResource("2_r8wpu")
+dialog_audio_pitch = 1.54
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

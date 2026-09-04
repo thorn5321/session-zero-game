@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://mimu015yg0jh"]
+
+[ext_resource type="Script" uid="uid://dft67kkfsmyc5" path="res://GeneralNodes/area_trigger/area_trigger.gd" id="1_8pwvx"]
+
+[node name="AreaTrigger" type="Area2D" unique_id=1905601412]
+collision_layer = 0
+script = ExtResource("1_8pwvx")

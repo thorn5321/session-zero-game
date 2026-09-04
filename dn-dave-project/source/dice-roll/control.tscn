@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://rqx4swfwvnvn"]
+
+[ext_resource type="Script" uid="uid://bemwahr75ywaa" path="res://control.gd" id="1_ae4lg"]
+[ext_resource type="Texture2D" uid="uid://cb0ugf2o8ahhj" path="res://source/dice-roll/Dice Roll2-0.png" id="2_ae4lg"]
+[ext_resource type="PackedScene" uid="uid://37c2rsvxtnpc" path="res://Levels/player_spawn.tscn" id="2_eux3m"]
+[ext_resource type="Texture2D" uid="uid://ce86yea7s7jc7" path="res://source/dice-roll/Dice Roll2-1.png" id="3_oguvv"]
+[ext_resource type="Texture2D" uid="uid://d0po32xi138ln" path="res://source/dice-roll/Dice Roll2-2.png" id="4_mlcoc"]
+[ext_resource type="Texture2D" uid="uid://dp861ydl23aq3" path="res://source/dice-roll/Dice Roll2-3.png" id="5_oxxpy"]
+[ext_resource type="Texture2D" uid="uid://cvsyl8ku8c1ou" path="res://source/dice-roll/Dice Roll2-4.png" id="6_3j1ed"]
+[ext_resource type="Texture2D" uid="uid://c61ouk3i7ijq7" path="res://source/dice-roll/Dice Roll2-5.png" id="7_ob1fh"]
+[ext_resource type="Texture2D" uid="uid://bi1tjy0a2trgf" path="res://source/dice-roll/Dice Roll2-6.png" id="8_xgb32"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uchyk"]
+resource_name = "Dice"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ae4lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oguvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mlcoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oxxpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3j1ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ob1fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xgb32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ae4lg")
+}],
+"loop": false,
+"name": &"Dice",
+"speed": 10.0
+}]
+
+[node name="Control" type="Control" unique_id=1939147692]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ae4lg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=471120244]
+process_mode = 3
+
+[node name="Dice" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1725949623]
+position = Vector2(104, 48)
+sprite_frames = SubResource("SpriteFrames_uchyk")
+animation = &"Dice"
+
+[node name="Label" type="Label" parent="CanvasLayer/Dice" unique_id=166918950]
+offset_left = 176.0
+offset_top = 152.0
+offset_right = 336.0
+offset_bottom = 216.0
+text = "Test"
+
+[node name="RollButton" type="Button" parent="CanvasLayer" unique_id=911764472]
+offset_left = 192.0
+offset_top = 24.0
+offset_right = 288.0
+offset_bottom = 88.0
+pivot_offset = Vector2(-968, 320)
+text = "Roll
+"
+
+[node name="PlayerSpawn" parent="." unique_id=497884489 instance=ExtResource("2_eux3m")]
+position = Vector2(208, 104)
+
+[connection signal="pressed" from="CanvasLayer/RollButton" to="." method="_on_roll_button_pressed"]

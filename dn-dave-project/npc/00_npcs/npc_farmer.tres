@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://ciuqp1042khmv"]
+
+[ext_resource type="Texture2D" uid="uid://c1h65j5hicjwj" path="res://npc/sprites/portraits/Farmer.png" id="1_ysip1"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="2_w4884"]
+[ext_resource type="Texture2D" uid="uid://d2su2damnqg0" path="res://npc/sprites_final/Final Update/Farmer-Sprites-Update.png" id="3_ysip1"]
+
+[resource]
+script = ExtResource("2_w4884")
+npc_name = "Teresa"
+sprite = ExtResource("3_ysip1")
+portrait = ExtResource("1_ysip1")
+dialog_audio_pitch = 1.8
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

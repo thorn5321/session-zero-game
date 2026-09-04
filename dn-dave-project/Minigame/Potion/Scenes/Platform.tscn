@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cm8aeyuxg10ky"]
+
+[ext_resource type="Script" uid="uid://bm3m84p5liskt" path="res://Minigame/Potion/Scripts/platform_potion.gd" id="1_diwx7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kvtb"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1373597319]
+script = ExtResource("1_diwx7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=808425856]
+position = Vector2(20, 19)
+scale = Vector2(2.295, 2.295)
+shape = SubResource("RectangleShape2D_6kvtb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1067207908]
+offset_right = 40.0
+offset_bottom = 40.0

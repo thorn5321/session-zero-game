@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cttf34uojn1yg"]
+
+[ext_resource type="Script" uid="uid://sh87os85p64d" path="res://Minigame/Potion/Scripts/update/shelf_zone.gd" id="1_5cswl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ribm3"]
+
+[node name="MidShelfZone" type="Area2D" unique_id=368436255]
+script = ExtResource("1_5cswl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=950950486]
+scale = Vector2(0.008833533, 0.008833533)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1532104252]
+shape = SubResource("RectangleShape2D_ribm3")

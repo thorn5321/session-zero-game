@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://p5fl5lm38c6x"]
+
+[ext_resource type="Script" uid="uid://cplr8ke2mlhum" path="res://Minigame/Farming/scripts/update/draggable_plant.gd" id="1_m0b46"]
+[ext_resource type="Texture2D" uid="uid://dmc5pxh672vak" path="res://Minigame/Farming/assets/radish_top.png" id="2_ujugb"]
+[ext_resource type="Texture2D" uid="uid://lcppbbklygfp" path="res://Minigame/Farming/assets/beet.png" id="3_80d2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xljgl"]
+
+[node name="ObjectRaddish" type="Area2D" unique_id=628660871]
+script = ExtResource("1_m0b46")
+sprout_texture = ExtResource("2_ujugb")
+grown_texture = ExtResource("3_80d2h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=900185986]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("2_ujugb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=428031982]
+shape = SubResource("RectangleShape2D_xljgl")

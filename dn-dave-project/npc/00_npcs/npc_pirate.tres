@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://bp18x7ge15lq2"]
+
+[ext_resource type="Texture2D" uid="uid://dibj1r1sp17h" path="res://npc/sprites/portraits/Pirate.png" id="1_dxfcd"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="2_a6cdg"]
+[ext_resource type="Texture2D" uid="uid://5yxsuncoxtmm" path="res://npc/sprites_final/Final Update/Pirate-Sprites-Update.png" id="3_dxfcd"]
+
+[resource]
+script = ExtResource("2_a6cdg")
+npc_name = "Gareth Sharkbite Wexford"
+sprite = ExtResource("3_dxfcd")
+portrait = ExtResource("1_dxfcd")
+dialog_audio_pitch = 0.6799999999999999
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

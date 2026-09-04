@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://ca4j5n61jc4w8"]
+
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="1_ums8o"]
+[ext_resource type="Texture2D" uid="uid://bl0ut170mbn1s" path="res://npc/sprites_final/animals/birds/seagull-bird.png" id="2_ums8o"]
+
+[resource]
+script = ExtResource("1_ums8o")
+npc_name = "Birdie"
+sprite = ExtResource("2_ums8o")
+dialog_audio_pitch = 1.8
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

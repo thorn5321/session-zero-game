@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://sn53cfi4clfs"]
+
+[ext_resource type="Texture2D" uid="uid://b3escl7bo73u2" path="res://npc/sprites/portraits/GoliathDruid.png" id="1_datrd"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="2_t21br"]
+[ext_resource type="Texture2D" uid="uid://c04exjfgttrkf" path="res://npc/sprites_final/Final Update/Druid-Sprites-Update.png" id="3_datrd"]
+
+[resource]
+script = ExtResource("2_t21br")
+npc_name = "Thalia"
+sprite = ExtResource("3_datrd")
+portrait = ExtResource("1_datrd")
+dialog_audio_pitch = 1.2
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://c5ub1abgsr3ck"]
+
+[ext_resource type="Texture2D" uid="uid://dgp1rdniy7b8h" path="res://npc/sprites_final/animals/birds/red-bird.png" id="2_ohowp"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="2_xr3i1"]
+
+[resource]
+script = ExtResource("2_xr3i1")
+npc_name = "Birdie"
+sprite = ExtResource("2_ohowp")
+dialog_audio_pitch = 1.8
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

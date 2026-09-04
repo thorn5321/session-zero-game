@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bn0cvesip8qe7"]
+
+[ext_resource type="Script" uid="uid://bk318t75ix3gk" path="res://source/time/time_manager.gd" id="1_xq6k4"]
+
+[node name="TimeTest" type="Control" unique_id=1560772925]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xq6k4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1506933311]
+
+[node name="ButtonIncreaseTime" type="Button" parent="CanvasLayer" unique_id=1283343457]
+offset_left = 1.5258789e-05
+offset_top = 7.9999924
+offset_right = 64.000015
+offset_bottom = 33.999992
+rotation = -0.0033985125
+scale = Vector2(3.1617553, 3.1617553)
+text = "Increase"
+
+[node name="ButtonDecreaseTime" type="Button" parent="CanvasLayer" unique_id=1816128225]
+offset_top = 104.0
+offset_right = 70.0
+offset_bottom = 130.0
+scale = Vector2(2.8400006, 3.2000005)
+text = "Decrease"
+
+[connection signal="pressed" from="CanvasLayer/ButtonIncreaseTime" to="." method="_on_button_increase_time_pressed"]

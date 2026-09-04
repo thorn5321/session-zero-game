@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://mf6frisdoci7"]
+
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="1_bo11x"]
+[ext_resource type="Texture2D" uid="uid://croysxse8v3xn" path="res://npc/sprites_final/animals/monsters/Beholder.png" id="2_bo11x"]
+
+[resource]
+script = ExtResource("1_bo11x")
+npc_name = "Beholder"
+sprite = ExtResource("2_bo11x")
+dialog_audio_pitch = 0.5
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

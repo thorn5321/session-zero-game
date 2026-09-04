@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c8qhfvqganp83"]
+
+[ext_resource type="Texture2D" uid="uid://noffoqaqvjhj" path="res://Minigame/Farming/Assets/basket.png" id="1_bkw4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g36g2"]
+
+[node name="ObjectBasket" type="Area2D" unique_id=210686805]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=827551937]
+position = Vector2(1, -2)
+scale = Vector2(0.022565879, 0.022565879)
+texture = ExtResource("1_bkw4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1440741109]
+shape = SubResource("RectangleShape2D_g36g2")

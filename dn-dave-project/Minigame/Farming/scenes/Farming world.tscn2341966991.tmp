@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://qn5xwcxh3afk"]
+
+[ext_resource type="Script" uid="uid://dv51lbssc0pw8" path="res://Minigame/Farming/scripts/farming_game.gd" id="1_ocib6"]
+[ext_resource type="Texture2D" uid="uid://stgyiqrqpeqk" path="res://Minigame/Farming/assets/Field_BG4.png" id="1_s1kdv"]
+[ext_resource type="PackedScene" uid="uid://37c2rsvxtnpc" path="res://Levels/player_spawn.tscn" id="3_ocib6"]
+[ext_resource type="PackedScene" uid="uid://boqnwqvxa4rbu" path="res://Minigame/Farming/scenes/Object Cabbage.tscn" id="3_pnlys"]
+[ext_resource type="PackedScene" uid="uid://dfnd63366vqe6" path="res://Minigame/Farming/scenes/Object Carrot.tscn" id="4_4bagc"]
+[ext_resource type="PackedScene" uid="uid://p5fl5lm38c6x" path="res://Minigame/Farming/scenes/Object raddish.tscn" id="5_p7j1e"]
+[ext_resource type="PackedScene" uid="uid://c8qhfvqganp83" path="res://Minigame/Farming/scenes/Platform Veggies.tscn" id="6_ocib6"]
+[ext_resource type="PackedScene" uid="uid://betro0rruqa8l" path="res://Levels/Transition_Test/level_transition_1.tscn" id="8_iery8"]
+[ext_resource type="Script" uid="uid://cli0dqmoq5i4s" path="res://Minigame/Blacksmith/scripts/fade_transition.gd" id="9_4wgto"]
+
+[sub_resource type="Animation" id="Animation_ju5is"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g0eyb"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iv0u0"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_18lb8"]
+resource_name = "fade_out"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwd4w"]
+_data = {
+&"RESET": SubResource("Animation_ju5is"),
+&"default": SubResource("Animation_g0eyb"),
+&"fade_in": SubResource("Animation_iv0u0"),
+&"fade_out": SubResource("Animation_18lb8")
+}
+
+[node name="FarmingWorld" type="Node2D" unique_id=752019631]
+script = ExtResource("1_ocib6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=555525317]
+offset_right = 1920.0
+offset_bottom = 1334.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_s1kdv")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1008818494]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 18.0
+
+[node name="PlayerSpawn" parent="TextureRect" unique_id=497884489 instance=ExtResource("3_ocib6")]
+position = Vector2(-140, 270)
+
+[node name="ObjectCabbage" parent="." unique_id=230575165 instance=ExtResource("3_pnlys")]
+position = Vector2(106, 202)
+scale = Vector2(1.858581, 1.858581)
+
+[node name="ObjectCarrot" parent="." unique_id=1188595599 instance=ExtResource("4_4bagc")]
+position = Vector2(256, 200)
+scale = Vector2(1.8585802, 1.8585802)
+
+[node name="ObjectRaddish" parent="." unique_id=1065096101 instance=ExtResource("5_p7j1e")]
+position = Vector2(185.00002, 200)
+scale = Vector2(1.858581, 1.858581)
+
+[node name="StaticBody2D" parent="." unique_id=19444194 groups=["droppable"] instance=ExtResource("6_ocib6")]
+position = Vector2(351, 162)
+scale = Vector2(3.1595585, 3.1595585)
+
+[node name="LevelTransition" parent="." unique_id=1311868414 instance=ExtResource("8_iery8")]
+position = Vector2(1072, 416)
+level = "uid://bcadkbgm0js21"
+size = 1
+side = 2
+
+[node name="LevelTransitionFRM" parent="." unique_id=1428488084 instance=ExtResource("8_iery8")]
+position = Vector2(1184, 416)
+level = "uid://bcadkbgm0js21"
+target_transition_area = "LevelTransitionFRM"
+size = 1
+side = 2
+
+[node name="FadeTransition" type="CanvasLayer" parent="." unique_id=1959419302]
+process_mode = 3
+script = ExtResource("9_4wgto")
+
+[node name="Control" type="Control" parent="FadeTransition" unique_id=1663063461]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="FadeTransition/Control" unique_id=2071228808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeTransition/Control" unique_id=1719961685]
+libraries/ = SubResource("AnimationLibrary_rwd4w")
+autoplay = &"default"

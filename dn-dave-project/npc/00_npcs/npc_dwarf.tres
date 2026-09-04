@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://dk6fkqdcfu8hx"]
+
+[ext_resource type="Texture2D" uid="uid://cnvvr6k4f6yda" path="res://npc/sprites/portraits/Dwarf.png" id="1_ur2gk"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="2_357xb"]
+[ext_resource type="Texture2D" uid="uid://bs7s71qun345t" path="res://npc/sprites_final/Dwarf_Sprites-Final2.png" id="3_ur2gk"]
+
+[resource]
+script = ExtResource("2_357xb")
+npc_name = "Tomte"
+sprite = ExtResource("3_ur2gk")
+portrait = ExtResource("1_ur2gk")
+dialog_audio_pitch = 0.5
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

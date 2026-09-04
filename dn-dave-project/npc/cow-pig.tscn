@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://bmty6phlhj3y8"]
+
+[ext_resource type="Script" uid="uid://11iri2vdfse0" path="res://npc/scripts/npc.gd" id="1_ix8lg"]
+[ext_resource type="Resource" uid="uid://bgx001hjwaq55" path="res://npc/00_animals_monster/pig-gator-cow/npc_pig.tres" id="2_ix8lg"]
+[ext_resource type="Texture2D" uid="uid://k6k0fk42xlfa" path="res://npc/sprites_final/animals/cow-gator-pig/pig.png" id="4_ix8lg"]
+[ext_resource type="Texture2D" uid="uid://bx1hlw8lhm4sk" path="res://Player/Sprites/Drop-Shadow.png" id="4_ymbk5"]
+
+[sub_resource type="Animation" id="Animation_3i1kj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_o6cys"]
+resource_name = "idle_down"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_ldo70"]
+resource_name = "idle_side"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_fnhme"]
+resource_name = "idle_up"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_uamtn"]
+resource_name = "walk_down"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [2, 1, 3, 1]
+}
+
+[sub_resource type="Animation" id="Animation_ocili"]
+resource_name = "walk_side"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [10, 7, 9, 7]
+}
+
+[sub_resource type="Animation" id="Animation_phifv"]
+resource_name = "walk_up"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 4, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wuxkc"]
+_data = {
+&"RESET": SubResource("Animation_3i1kj"),
+&"idle_down": SubResource("Animation_o6cys"),
+&"idle_side": SubResource("Animation_ldo70"),
+&"idle_up": SubResource("Animation_fnhme"),
+&"walk_down": SubResource("Animation_uamtn"),
+&"walk_side": SubResource("Animation_ocili"),
+&"walk_up": SubResource("Animation_phifv")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2xp5l"]
+radius = 6.0
+height = 22.0
+
+[node name="NPC" type="CharacterBody2D" unique_id=289794545]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_ix8lg")
+npc_resource = ExtResource("2_ix8lg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1749933053]
+position = Vector2(0, -12)
+texture = ExtResource("4_ix8lg")
+hframes = 2
+
+[node name="ShadowSprite" type="Sprite2D" parent="Sprite2D" unique_id=538962856]
+modulate = Color(1, 1, 1, 0.4392157)
+show_behind_parent = true
+position = Vector2(0, 12)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("4_ymbk5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=698712714]
+libraries/ = SubResource("AnimationLibrary_wuxkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=221410082]
+visible = false
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2xp5l")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://v25tlvkqn2as"]
+
+[ext_resource type="Texture2D" uid="uid://cub8l1567fxrc" path="res://npc/sprites/portraits/Potionmaker.png" id="1_71ig0"]
+[ext_resource type="Script" uid="uid://c0jgkwdmlq1v5" path="res://npc/scripts/npc_resource.gd" id="2_1l1dw"]
+[ext_resource type="Texture2D" uid="uid://cxiy71br3o8yn" path="res://npc/sprites_final/Raven_Sprites.png" id="3_1l1dw"]
+
+[resource]
+script = ExtResource("2_1l1dw")
+npc_name = "Quill"
+sprite = ExtResource("3_1l1dw")
+portrait = ExtResource("1_71ig0")
+dialog_audio_pitch = 0.94
+metadata/_custom_type_script = "uid://c0jgkwdmlq1v5"

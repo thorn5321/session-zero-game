@@ -1,0 +1,323 @@
+[gd_scene format=3 uid="uid://qn5xwcxh3afk"]
+
+[ext_resource type="Script" uid="uid://ctjdxcyuib0wl" path="res://Minigame/Farming/scripts/update/farming_game.gd" id="1_ocib6"]
+[ext_resource type="Texture2D" uid="uid://stgyiqrqpeqk" path="res://Minigame/Farming/Assets/Field_BG4.png" id="1_s1kdv"]
+[ext_resource type="AudioStream" uid="uid://cg4x30imu0jk6" path="res://title_scene/audio/MENU_BGM_TEMP.mp3" id="2_4wgto"]
+[ext_resource type="PackedScene" uid="uid://37c2rsvxtnpc" path="res://Levels/player_spawn.tscn" id="3_ocib6"]
+[ext_resource type="PackedScene" uid="uid://boqnwqvxa4rbu" path="res://Minigame/Farming/scenes/Object Cabbage.tscn" id="3_pnlys"]
+[ext_resource type="PackedScene" uid="uid://p5fl5lm38c6x" path="res://Minigame/Farming/scenes/Object raddish.tscn" id="5_p7j1e"]
+[ext_resource type="Texture2D" uid="uid://d0g1h8ceoaafy" path="res://Minigame/Farming/Assets/cabbage.png" id="6_bsfnm"]
+[ext_resource type="PackedScene" uid="uid://c8qhfvqganp83" path="res://Minigame/Farming/scenes/Basket.tscn" id="6_ocib6"]
+[ext_resource type="Texture2D" uid="uid://dhasq7vrv4myi" path="res://Minigame/Farming/Assets/cabbage_leafy.png" id="7_dsrdo"]
+[ext_resource type="AudioStream" uid="uid://kngxbpqugkkk" path="res://title_scene/audio/Cursor1.ogg" id="7_iery8"]
+[ext_resource type="PackedScene" uid="uid://betro0rruqa8l" path="res://Levels/Transition_Test/level_transition_1.tscn" id="8_iery8"]
+[ext_resource type="Script" uid="uid://cli0dqmoq5i4s" path="res://Minigame/Blacksmith/scripts/fade_transition.gd" id="9_4wgto"]
+[ext_resource type="Texture2D" uid="uid://cqf4vps2w1e6i" path="res://Minigame/Farming/Assets/carrot_top.png" id="10_bsfnm"]
+[ext_resource type="PackedScene" uid="uid://b8w8astx4m4c2" path="res://Minigame/Farming/scenes/Object_Carrot.tscn" id="10_yen3a"]
+[ext_resource type="Texture2D" uid="uid://cwae5vwk8cdkj" path="res://Minigame/Farming/Assets/carrot.png" id="11_dsrdo"]
+[ext_resource type="AudioStream" uid="uid://yryixog2hnc0" path="res://title_scene/audio/Item1.mp3" id="13_htjkj"]
+[ext_resource type="Script" uid="uid://cs32ds0ssf6fn" path="res://Minigame/Farming/scripts/update/static_basket.gd" id="14_bsfnm"]
+[ext_resource type="Texture2D" uid="uid://cb0ugf2o8ahhj" path="res://source/dice-roll/Dice Roll2-0.png" id="18_us152"]
+[ext_resource type="Texture2D" uid="uid://ce86yea7s7jc7" path="res://source/dice-roll/Dice Roll2-1.png" id="19_cfg56"]
+[ext_resource type="Texture2D" uid="uid://d0po32xi138ln" path="res://source/dice-roll/Dice Roll2-2.png" id="20_ghocc"]
+[ext_resource type="Texture2D" uid="uid://dp861ydl23aq3" path="res://source/dice-roll/Dice Roll2-3.png" id="21_bbfua"]
+[ext_resource type="Texture2D" uid="uid://cvsyl8ku8c1ou" path="res://source/dice-roll/Dice Roll2-4.png" id="22_m70wc"]
+[ext_resource type="Texture2D" uid="uid://c61ouk3i7ijq7" path="res://source/dice-roll/Dice Roll2-5.png" id="23_ympix"]
+[ext_resource type="Texture2D" uid="uid://bi1tjy0a2trgf" path="res://source/dice-roll/Dice Roll2-6.png" id="24_jth2k"]
+
+[sub_resource type="Animation" id="Animation_ju5is"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g0eyb"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iv0u0"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_18lb8"]
+resource_name = "fade_out"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwd4w"]
+_data = {
+&"RESET": SubResource("Animation_ju5is"),
+&"default": SubResource("Animation_g0eyb"),
+&"fade_in": SubResource("Animation_iv0u0"),
+&"fade_out": SubResource("Animation_18lb8")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0eeh"]
+resource_name = "Dice"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_us152")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cfg56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ghocc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bbfua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_m70wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ympix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jth2k")
+}],
+"loop": false,
+"name": &"Dice",
+"speed": 10.0
+}]
+
+[node name="FarmingWorld" type="Control" unique_id=714213854]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ocib6")
+music = ExtResource("2_4wgto")
+next_scene_path = "uid://c8nu1o0iisyto"
+success_sound = ExtResource("7_iery8")
+collect_sound = ExtResource("13_htjkj")
+alternate_next_scene_path = "uid://brsoyw4tbwsmb"
+required_flag_name = "repeat"
+target_transition_area = "FarmReturn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=830201756]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1985234246]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0837783, 0.24763796, 0.13016418, 1)
+
+[node name="Background_Farm" type="TextureRect" parent="CanvasLayer" unique_id=1625752134]
+offset_left = 36.0
+offset_top = -13.0
+offset_right = 1956.0
+offset_bottom = 1321.0
+scale = Vector2(0.21353368, 0.21353368)
+texture = ExtResource("1_s1kdv")
+
+[node name="CompleteLabel" type="Label" parent="CanvasLayer" unique_id=1697964151]
+visible = false
+offset_left = 114.0
+offset_top = 4.0
+offset_right = 268.0
+offset_bottom = 49.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 39
+text = "Complete!"
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1096308339]
+offset_left = 334.0
+offset_top = 2.0
+offset_right = 488.0
+offset_bottom = 47.0
+scale = Vector2(0.576984, 0.576984)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 39
+
+[node name="Minigame_Objects" type="Node2D" parent="CanvasLayer" unique_id=1239395031]
+position = Vector2(36, 0)
+
+[node name="ObjectBasket" parent="CanvasLayer/Minigame_Objects" unique_id=19444194 instance=ExtResource("6_ocib6")]
+position = Vector2(381, 163)
+scale = Vector2(3.0544043, 3.0544043)
+script = ExtResource("14_bsfnm")
+
+[node name="ObjectCabbage" parent="CanvasLayer/Minigame_Objects" unique_id=230575165 instance=ExtResource("3_pnlys")]
+position = Vector2(98.00001, 198)
+scale = Vector2(2.1907225, 2.1907225)
+basket_path = NodePath("../ObjectBasket")
+sprout_texture = ExtResource("6_bsfnm")
+grown_texture = ExtResource("7_dsrdo")
+
+[node name="ObjectCabbage2" parent="CanvasLayer/Minigame_Objects" unique_id=719040328 instance=ExtResource("3_pnlys")]
+position = Vector2(306, 152)
+scale = Vector2(2.1907225, 2.1907225)
+basket_path = NodePath("../ObjectBasket")
+sprout_texture = ExtResource("6_bsfnm")
+grown_texture = ExtResource("7_dsrdo")
+
+[node name="ObjectCabbage3" parent="CanvasLayer/Minigame_Objects" unique_id=1082083116 instance=ExtResource("3_pnlys")]
+position = Vector2(98, 144.00002)
+scale = Vector2(2.1907225, 2.1907225)
+basket_path = NodePath("../ObjectBasket")
+sprout_texture = ExtResource("6_bsfnm")
+grown_texture = ExtResource("7_dsrdo")
+
+[node name="ObjectRaddish" parent="CanvasLayer/Minigame_Objects" unique_id=1065096101 instance=ExtResource("5_p7j1e")]
+position = Vector2(154.00002, 203.00002)
+scale = Vector2(2.190723, 2.190723)
+basket_path = NodePath("../ObjectBasket")
+
+[node name="ObjectRaddish2" parent="CanvasLayer/Minigame_Objects" unique_id=628660871 instance=ExtResource("5_p7j1e")]
+position = Vector2(300, 200)
+scale = Vector2(2.190723, 2.190723)
+basket_path = NodePath("../ObjectBasket")
+
+[node name="ObjectRaddish3" parent="CanvasLayer/Minigame_Objects" unique_id=1346483895 instance=ExtResource("5_p7j1e")]
+position = Vector2(198.00003, 156.00002)
+scale = Vector2(2.190723, 2.190723)
+basket_path = NodePath("../ObjectBasket")
+
+[node name="ObjectCarrot" parent="CanvasLayer/Minigame_Objects" unique_id=1144312618 instance=ExtResource("10_yen3a")]
+position = Vector2(241, 205)
+scale = Vector2(2.1907225, 2.1907225)
+basket_path = NodePath("../ObjectBasket")
+sprout_texture = ExtResource("10_bsfnm")
+grown_texture = ExtResource("11_dsrdo")
+
+[node name="ObjectCarrot2" parent="CanvasLayer/Minigame_Objects" unique_id=1554508086 instance=ExtResource("10_yen3a")]
+position = Vector2(247, 145)
+scale = Vector2(2.1907225, 2.1907225)
+basket_path = NodePath("../ObjectBasket")
+sprout_texture = ExtResource("10_bsfnm")
+grown_texture = ExtResource("11_dsrdo")
+
+[node name="ObjectCarrot3" parent="CanvasLayer/Minigame_Objects" unique_id=1742992671 instance=ExtResource("10_yen3a")]
+position = Vector2(147, 157.00002)
+scale = Vector2(2.1907225, 2.1907225)
+basket_path = NodePath("../ObjectBasket")
+sprout_texture = ExtResource("10_bsfnm")
+grown_texture = ExtResource("11_dsrdo")
+
+[node name="SuccessAudio" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=2747150]
+stream = ExtResource("7_iery8")
+volume_db = 2.0
+
+[node name="PlantAudio" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1215293436]
+stream = ExtResource("13_htjkj")
+volume_db = 2.0
+
+[node name="PlayerSpawn" parent="." unique_id=497884489 instance=ExtResource("3_ocib6")]
+position = Vector2(-23, 72)
+scale = Vector2(0.2, 0.2)
+
+[node name="LevelTransition" parent="." unique_id=1311868414 instance=ExtResource("8_iery8")]
+position = Vector2(1072, 416)
+level = "uid://bcadkbgm0js21"
+size = 1
+side = 2
+
+[node name="LevelTransitionFRM" parent="." unique_id=1428488084 instance=ExtResource("8_iery8")]
+position = Vector2(1184, 416)
+level = "uid://bcadkbgm0js21"
+target_transition_area = "LevelTransitionFRM"
+size = 1
+side = 2
+
+[node name="FadeTransition" type="CanvasLayer" parent="." unique_id=1959419302]
+process_mode = 3
+script = ExtResource("9_4wgto")
+
+[node name="Control" type="Control" parent="FadeTransition" unique_id=1663063461]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="FadeTransition/Control" unique_id=2071228808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeTransition/Control" unique_id=1719961685]
+libraries/ = SubResource("AnimationLibrary_rwd4w")
+autoplay = &"default"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1392537966]
+process_mode = 3
+
+[node name="Dice" type="AnimatedSprite2D" parent="CanvasLayer2" unique_id=1453033488]
+position = Vector2(615.75, 162.75)
+scale = Vector2(3.1375, 3.1375)
+sprite_frames = SubResource("SpriteFrames_c0eeh")
+animation = &"Dice"
+
+[node name="Label" type="Label" parent="CanvasLayer2/Dice" unique_id=944940924]
+offset_left = 176.0
+offset_top = 152.0
+offset_right = 336.0
+offset_bottom = 216.0
+text = "Test"
+metadata/_edit_use_anchors_ = true
+
+[node name="RollButton" type="Button" parent="CanvasLayer2" unique_id=1272538473]
+offset_left = 767.75
+offset_top = 322.75
+offset_right = 863.75
+offset_bottom = 386.75
+pivot_offset = Vector2(-968, 320)
+text = "Roll
+"
+metadata/_edit_use_anchors_ = true

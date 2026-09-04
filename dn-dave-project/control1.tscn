@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c7fa51fmv4kmx"]
+
+[ext_resource type="Script" uid="uid://205kab8vpjfe" path="res://timecheck.gd" id="1_qebxf"]
+
+[node name="Control" type="Control" unique_id=1441983988]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qebxf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2012068362]
+
+[node name="ButtonIncreaseTime" type="Button" parent="CanvasLayer" unique_id=1612457004]
+offset_left = 1.5258789e-05
+offset_top = 7.9999924
+offset_right = 64.000015
+offset_bottom = 33.999992
+rotation = -0.0033985125
+scale = Vector2(3.1617553, 3.1617553)
+text = "Increase"
+
+[node name="ButtonDecreaseTime" type="Button" parent="CanvasLayer" unique_id=398787089]
+offset_top = 104.0
+offset_right = 70.0
+offset_bottom = 130.0
+scale = Vector2(2.8400006, 3.2000005)
+text = "Decrease"
