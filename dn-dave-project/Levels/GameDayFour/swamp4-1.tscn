@@ -1850,7 +1850,7 @@ metadata/_custom_type_script = "uid://bbccl13o27g0t"
 
 [node name="NPC_Dwarf_Wander" parent="." unique_id=245411414 instance=ExtResource("7_savj2")]
 visible = false
-position = Vector2(-20.418694, 11.230446)
+position = Vector2(-25.451412, 10.862835)
 scale = Vector2(0.8, 0.8)
 
 [node name="NpcBehaviorWander" parent="NPC_Dwarf_Wander" unique_id=2130607038 instance=ExtResource("13_iatgx")]
@@ -2035,22 +2035,22 @@ text = "Roll
 metadata/_edit_use_anchors_ = true
 
 [node name="NPC_Skeleton" parent="." unique_id=1780031131 instance=ExtResource("31_ltk3q")]
-position = Vector2(579.9748, 2.8592942)
+position = Vector2(829, -61)
 
 [node name="NPC_Skeleton2" parent="." unique_id=700986866 instance=ExtResource("31_ltk3q")]
 position = Vector2(744, 298)
 
 [node name="NPC_Skeleton3" parent="." unique_id=1809175455 instance=ExtResource("31_ltk3q")]
-position = Vector2(447, 770.8593)
+position = Vector2(514.769, 858)
 
 [node name="NPC_Skeleton4" parent="." unique_id=426620852 instance=ExtResource("31_ltk3q")]
-position = Vector2(323.43597, 750.29645)
+position = Vector2(379.8715, 865.04913)
 
 [node name="NPC_Skeleton5" parent="." unique_id=1222422477 instance=ExtResource("31_ltk3q")]
-position = Vector2(-607.0891, 347.70474)
+position = Vector2(-821, 347)
 
 [node name="NPC_Gator" parent="." unique_id=211266998 instance=ExtResource("17_l8fcw")]
-position = Vector2(141.34404, -179.53055)
+position = Vector2(139.75945, -183.22809)
 
 [node name="DialogInteraction" parent="NPC_Gator" unique_id=82861441 instance=ExtResource("10_iq3vn")]
 process_mode = 3
@@ -2063,7 +2063,7 @@ npc_info = ExtResource("18_ctvxn")
 metadata/_custom_type_script = "uid://bbccl13o27g0t"
 
 [node name="NPC_Frog" parent="." unique_id=1081001719 instance=ExtResource("15_j1quv")]
-position = Vector2(216.645, -446.6714)
+position = Vector2(216.23814, -456.0125)
 
 [node name="DialogInteraction" parent="NPC_Frog" unique_id=1002530162 instance=ExtResource("10_iq3vn")]
 process_mode = 3

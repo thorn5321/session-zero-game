@@ -3513,7 +3513,7 @@ shape = SubResource("RectangleShape2D_td4pd")
 process_mode = 3
 position = Vector2(872.4897, 54.256596)
 scale = Vector2(1.0244045, 1.5968531)
-task_branch_name = "end_day_six"
+game_state_flag_name = "end_day_six"
 
 [node name="DialogText10" type="Node" parent="AreaTrigger3/DialogInteraction" unique_id=849967018]
 script = ExtResource("16_8a777")

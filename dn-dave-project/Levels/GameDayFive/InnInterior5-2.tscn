@@ -2969,7 +2969,7 @@ npc_resource = ExtResource("26_7isp2")
 [node name="DialogInteraction2" parent="NPC_Patrol_Interact_Test" unique_id=630171653 instance=ExtResource("27_2q8wp")]
 scale = Vector2(0.99999994, 0.99999994)
 task_branch_name = "DialogBranch2"
-transition_node_path = NodePath("../../NextDay5")
+transition_node_path = NodePath("../../NextDay6")
 trigger_transition_on_branch_match = true
 
 [node name="DialogText" type="Node" parent="NPC_Patrol_Interact_Test/DialogInteraction2" unique_id=944531989]
@@ -3029,7 +3029,7 @@ text = "Roll
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="NextDay5" parent="." unique_id=1036631101 instance=ExtResource("40_cdj4q")]
+[node name="NextDay6" parent="." unique_id=1036631101 instance=ExtResource("40_cdj4q")]
 position = Vector2(240, 224)
 scale = Vector2(0.99999994, 0.99999994)
 level = "uid://chg8bcaxaywbw"
@@ -3037,7 +3037,7 @@ target_transition_area = ""
 size = 1
 side = 2
 
-[node name="Test_Interact" type="Sprite2D" parent="NextDay5" unique_id=1028646760]
+[node name="Test_Interact" type="Sprite2D" parent="NextDay6" unique_id=1028646760]
 texture_filter = 2
 position = Vector2(3.0517578e-05, -15)
 scale = Vector2(0.03, 0.03)
