@@ -3105,8 +3105,8 @@ metadata/_custom_type_script = "uid://b6r741n1n8fx"
 
 [node name="DialogText" type="Node" parent="CutsceneEntity/NpcBehaviorPatrol/DialogInteraction/DialogChoice/Node" unique_id=1522663035]
 script = ExtResource("28_3wauh")
-text = "[color=FF5D00][b]Are you sure? Alright then."
-npc_info = ExtResource("42_7qup1")
+text = "[b]No worries, please enjoy the demo!"
+npc_info = ExtResource("26_wwwjs")
 metadata/_custom_type_script = "uid://bbccl13o27g0t"
 
 [node name="DialogBranch2" type="Node" parent="CutsceneEntity/NpcBehaviorPatrol/DialogInteraction/DialogChoice" unique_id=1721396748]
