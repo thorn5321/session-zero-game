@@ -39,6 +39,15 @@
 [ext_resource type="Texture2D" uid="uid://cvsyl8ku8c1ou" path="res://source/dice-roll/Dice Roll2-4.png" id="37_yh313"]
 [ext_resource type="Texture2D" uid="uid://c61ouk3i7ijq7" path="res://source/dice-roll/Dice Roll2-5.png" id="38_iflac"]
 [ext_resource type="Texture2D" uid="uid://bi1tjy0a2trgf" path="res://source/dice-roll/Dice Roll2-6.png" id="39_lv1o7"]
+[ext_resource type="PackedScene" uid="uid://254govciep54" path="res://Levels/level_transition_interact.tscn" id="40_x4v0l"]
+[ext_resource type="Texture2D" uid="uid://ctlxp635w6x3" path="res://title_scene/Title_Screen.PNG" id="41_5h28d"]
+[ext_resource type="Resource" uid="uid://ccdcl0ojd74de" path="res://npc/00_npcs/npc_innkeeper.tres" id="42_3p8ux"]
+[ext_resource type="Resource" uid="uid://dltxkoeranxrn" path="res://npc/00_npcs/npc_blacksmith.tres" id="42_7qup1"]
+[ext_resource type="PackedScene" uid="uid://kb06r2wajyig" path="res://npc/npc_behavior_patrol.tscn" id="43_3p8ux"]
+[ext_resource type="PackedScene" uid="uid://ylix8shbx1i4" path="res://npc/patrol_location.tscn" id="44_v1df4"]
+[ext_resource type="Script" uid="uid://1ckgxayga81g" path="res://Interactibles/dialog/scripts/dialog_choice.gd" id="45_l7b8d"]
+[ext_resource type="Script" uid="uid://b6r741n1n8fx" path="res://Interactibles/dialog/scripts/dialog_branch.gd" id="46_4afp0"]
+[ext_resource type="Resource" uid="uid://qxfpo4tgl741" path="res://npc/00_npcs/npc_elf_warlock.tres" id="47_4k11i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftj7a"]
 texture = ExtResource("3_ftj7a")
@@ -2979,7 +2988,7 @@ npc_resource = ExtResource("26_wwwjs")
 [node name="DialogInteraction2" parent="NPC_Patrol_Interact_Test" unique_id=630171653 instance=ExtResource("27_ix6oy")]
 scale = Vector2(0.99999994, 0.99999994)
 task_branch_name = "DialogBranch2"
-transition_node_path = NodePath("../../LevelTransitionBSM")
+transition_node_path = NodePath("../../LevelTransition7-2")
 trigger_transition_on_branch_match = true
 
 [node name="DialogText" type="Node" parent="NPC_Patrol_Interact_Test/DialogInteraction2" unique_id=944531989]
@@ -3058,3 +3067,64 @@ script = ExtResource("28_3wauh")
 text = "Perhaps you should go talk to them."
 npc_info = ExtResource("30_j273m")
 metadata/_custom_type_script = "uid://bbccl13o27g0t"
+
+[node name="CutsceneEntity" parent="." unique_id=18276526 instance=ExtResource("25_ulqj8")]
+position = Vector2(56, -90)
+collision_layer = 0
+npc_resource = ExtResource("42_3p8ux")
+
+[node name="NpcBehaviorPatrol" parent="CutsceneEntity" unique_id=2059669348 instance=ExtResource("43_3p8ux")]
+
+[node name="PatrolLocation" parent="CutsceneEntity/NpcBehaviorPatrol" unique_id=2081148079 instance=ExtResource("44_v1df4")]
+modulate = Color(1, 0, 0, 1)
+wait_time = 3.0
+
+[node name="DialogInteraction" parent="CutsceneEntity/NpcBehaviorPatrol" unique_id=337524874 instance=ExtResource("27_ix6oy")]
+process_mode = 3
+task_branch_name = "DialogBranch2"
+task_branch_name_2 = "DialogBranch"
+transition_node_path = NodePath("../../../LevelTransition7-2")
+trigger_transition_on_branch_match = true
+
+[node name="DialogText2" type="Node" parent="CutsceneEntity/NpcBehaviorPatrol/DialogInteraction" unique_id=1653222391]
+script = ExtResource("28_3wauh")
+text = "[b]Would you like to view the final cutscene?"
+npc_info = ExtResource("26_wwwjs")
+metadata/_custom_type_script = "uid://bbccl13o27g0t"
+
+[node name="DialogChoice" type="Node" parent="CutsceneEntity/NpcBehaviorPatrol/DialogInteraction" unique_id=1654469999]
+script = ExtResource("45_l7b8d")
+npc_info = ExtResource("42_7qup1")
+metadata/_custom_type_script = "uid://1ckgxayga81g"
+
+[node name="Node" type="Node" parent="CutsceneEntity/NpcBehaviorPatrol/DialogInteraction/DialogChoice" unique_id=1373116453]
+script = ExtResource("46_4afp0")
+text = "No"
+npc_info = ExtResource("42_7qup1")
+metadata/_custom_type_script = "uid://b6r741n1n8fx"
+
+[node name="DialogText" type="Node" parent="CutsceneEntity/NpcBehaviorPatrol/DialogInteraction/DialogChoice/Node" unique_id=1522663035]
+script = ExtResource("28_3wauh")
+text = "[color=FF5D00][b]Are you sure? Alright then."
+npc_info = ExtResource("42_7qup1")
+metadata/_custom_type_script = "uid://bbccl13o27g0t"
+
+[node name="DialogBranch2" type="Node" parent="CutsceneEntity/NpcBehaviorPatrol/DialogInteraction/DialogChoice" unique_id=1721396748]
+script = ExtResource("46_4afp0")
+text = "Yes"
+npc_info = ExtResource("47_4k11i")
+metadata/_custom_type_script = "uid://b6r741n1n8fx"
+
+[node name="LevelTransition7-2" parent="." unique_id=1036631101 instance=ExtResource("40_x4v0l")]
+position = Vector2(488, -70)
+scale = Vector2(0.99999994, 0.99999994)
+level = "uid://dxovnt8abaebe"
+target_transition_area = ""
+size = 1
+side = 2
+
+[node name="Test_Interact" type="Sprite2D" parent="LevelTransition7-2" unique_id=1464295749]
+texture_filter = 2
+position = Vector2(3.0517578e-05, -15)
+scale = Vector2(0.007, 0.006)
+texture = ExtResource("41_5h28d")
